@@ -1,4 +1,10 @@
 import fs from "fs/promises";
+import crypto from "crypto";
+
+const { privateKey, publicKey } = crypto.generateKeyPairSync("rsa", {
+    modulusLength: 2048
+});
+
 
 class manager {
     constructor() {
