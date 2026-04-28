@@ -60,3 +60,6 @@ class manager {
         }
     }
 }
+
+const manage = new manager();
+manage.writeFile("new.txt", "Hey there!");
