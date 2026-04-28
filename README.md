@@ -1,3 +1,4 @@
 # origin
 tests and funnycodes
-just a blue world
+\njust a blue world
+\nEasily
