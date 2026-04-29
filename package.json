@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/nullLetsEncript/origin/issues"
   },
-  "homepage": "https://github.com/nullLetsEncript/origin#readme"
+  "homepage": "https://github.com/nullLetsEncript/origin#readme",
+  "dependencies": {
+    "wav-encoder": "^1.3.0"
+  }
 }
