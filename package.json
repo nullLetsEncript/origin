@@ -2,10 +2,8 @@
   "name": "origin",
   "version": "1.0.0",
   "description": "***tests and funnycodes***",
-  "main": "node.js",
-  "directories": {
-    "lib": "lib"
-  },
+  "main": "core.js",
+  
   "scripts": {
     "test": "echo everything is OK"
   },
