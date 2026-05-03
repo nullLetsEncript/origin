@@ -2,7 +2,7 @@ import { Convert , Complex } from "./fft/complex.js";
 import { fft, ifft } from "./fft/fft.js";
 import WavEncoder from "wav-encoder";
 import fs from "fs/promises";
-import crypto from "crypto";
+import crypto from "node:crypto";
 
 function frequencyFilterKeeper(X, Fs, from, to) {
   for (let k = 0; k < X.length; k++) {
