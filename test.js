@@ -22,7 +22,7 @@ function processLowPass(inputFloat32, Fs) {
 
     const X = fft(xComplex);
 
-    const Xf = frequencyFilterKeeper(X, Fs, 0, 900);
+    const Xf = frequencyFilterKeeper(X, Fs, 0, 1100);
     // const Xf = lowPassFilterFFT(X, Fs, cutoffHz);
 
     const yComplex = ifft(Xf);
@@ -41,19 +41,9 @@ function generateWhiteNoise(duration, sampleRate) {
     return whiteNoise;
 }
 
-function normalizeFloat32(x) {
-  let max = 0;
-  for (let i = 0; i < x.length; i++) max = Math.max(max, Math.abs(x[i]));
-  if (max === 0) return x;
-  const s = 0.98 / max;
-  const out = new Float32Array(x.length);
-  for (let i = 0; i < x.length; i++) out[i] = x[i] * s;
-  return out;
-}
-
 const sampleRate = 44100;
-const noise = normalizeFloat32(processLowPass(generateWhiteNoise(3, sampleRate), sampleRate)); 
-
+const noise = processLowPass(generateWhiteNoise(3, sampleRate), sampleRate); 
+console.log(noise)
 WavEncoder.encode({
     bitDepth: 32,
     channelData: [noise],

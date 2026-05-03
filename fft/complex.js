@@ -50,23 +50,27 @@ class Convert {
         }
         return out;
     }
-    ComplexToF32(complex) {
-        const out = new Float32Array(complex.length);
-        for (let i = 0; i < complex.length; i++) {
+    ComplexToF32(complex, originalSignalLength) {
+        const out = new Float32Array(originalSignalLength);
+        for (let i = 0; i < originalSignalLength; i++) {
             out[i] = complex[i].real;
         }
+
+        return out.slice(0, originalSignalLength);
     }
-    ComplexToF16(complex) {
-        const out = new Float16Array(complex.length);
-        for (let i = 0; i < complex.length; i++) {
+    ComplexToF16(complex, originalSignalLength) {
+        const out = new Float16Array(originalSignalLength);
+        for (let i = 0; i < originalSignalLength; i++) {
             out[i] = complex[i].real;
         }
+        return out.slice(0, originalSignalLength);
     }
-    ComplexToF64(complex) {
-        const out = new Float64Array(complex.length);
-        for (let i = 0; i < complex.length; i++) {
+    ComplexToF64(complex, originalSignalLength) {
+        const out = new Float64Array(originalSignalLength);
+        for (let i = 0; i < originalSignalLength; i++) {
             out[i] = complex[i].real;
         }
+        return out.slice(0, originalSignalLength);
     }
 }
 
